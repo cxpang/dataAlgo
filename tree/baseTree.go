@@ -172,7 +172,7 @@ func preOrderTraverse(node *Node) {
 
 
 
-func main() {
+func main2() {
 	tree:= BinaryTree{nil,sync.RWMutex{}}
 	tree.Insert(8,"pangchenxu")
     tree.Insert(4,"lichen")
