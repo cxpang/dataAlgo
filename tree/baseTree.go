@@ -171,6 +171,7 @@ func preOrderTraverse(node *Node) {
 
 
 
+//必要时可打开 单独编译
 
 func main2() {
 	tree:= BinaryTree{nil,sync.RWMutex{}}
