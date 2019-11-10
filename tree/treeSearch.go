@@ -17,4 +17,14 @@ func main() {
 	tree.Insert(9,"j")
 	tree.Insert(11,"k")
 	tree.PreOrderTraverse()
+
+	//进行广度优先搜索
 }
+/**
+ *广度优先搜索
+***/
+
+
+/**
+ *深度优先搜索
+***/
