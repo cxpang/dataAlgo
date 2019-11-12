@@ -23,8 +23,12 @@ func main() {
 /**
  *广度优先搜索
 ***/
-func Bfs()  {
+func (node *Node)Bfs(){
+	if node ==nil{
+		return
+	}
 	
+
 }
 
 
@@ -32,5 +36,5 @@ func Bfs()  {
  *深度优先搜索
 ***/
 func Dfs()  {
-	
+
 }
