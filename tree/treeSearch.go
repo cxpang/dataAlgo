@@ -1,6 +1,9 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 //tree 的深度优先与广度优先搜索
 func main() {
@@ -19,15 +22,39 @@ func main() {
 	tree.PreOrderTraverse()
 
 	//进行广度优先搜索
+	tree.BfsTree()
 }
+
+func (tree *BinaryTree) BfsTree()  {
+	tree.lock.Lock()
+	defer tree.lock.Unlock()
+	Bfs(tree.root)
+}
+
+
+
 /**
  *广度优先搜索
 ***/
-func (node *Node)Bfs(){
+func Bfs(node *Node){
 	if node ==nil{
-		return
+		return 
 	}
-	
+	var queue []*Node
+	queue=append(queue, node)
+
+	for len(queue) > 0 {
+		node:=queue[0]
+		queue = queue[1:]
+		fmt.Println(node.key)
+		if node.left!=nil{
+			queue = append(queue, node.left)
+		}
+		if node.right!=nil{
+			queue = append(queue,node.right)
+		}
+
+	}
 
 }
 
