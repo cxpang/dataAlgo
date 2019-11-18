@@ -29,6 +29,13 @@ func (tree *BinaryTree) BfsTree()  {
 	tree.lock.Lock()
 	defer tree.lock.Unlock()
 	Bfs(tree.root)
+	fmt.Println("层序遍历 广度")
+	PrintLevel(tree.root)
+	fmt.Println(result)
+
+	Dfslevel(tree.root)
+	fmt.Println("层序遍历 深度")
+	fmt.Println(Dresult)
 }
 
 
@@ -57,11 +64,55 @@ func Bfs(node *Node){
 	}
 
 }
+/*
+*打印二叉树层次
+**/
+var result [][]interface{}
+func PrintLevel(node *Node)[][]interface{}  {
 
+	if node==nil{
+		return  result
+	}
+
+	bfsHelper(node,0)
+	return result
+}
+func bfsHelper(node *Node,level int)  {
+	if node==nil{
+		return
+	}
+	if len(result) < level+1{
+		result=append(result,make([]interface{},0))
+	}
+	result[level] = append(result[level],node.val)
+	if node.left!=nil{
+		bfsHelper(node.left,level+1)
+	}
+	if node.right!=nil{
+		bfsHelper(node.right,level+1)
+	}
+}
 
 /**
  *深度优先搜索
 ***/
-func Dfs()  {
-
+var Dresult [][]interface{}
+func Dfslevel(node *Node)[][]interface{}  {
+	if node==nil{
+		return Dresult
+	}
+	Dfs(node,0)
+	return Dresult
+}
+func Dfs(node *Node,level int)  {
+	if node ==nil {
+		return
+	}
+	if len(Dresult)<level+1{
+		Dresult = append(Dresult,[]interface{}{node.val})
+	}else {
+		Dresult[level] = append(Dresult[level],node.val)
+	}
+	Dfs(node.left,level+1)
+	Dfs(node.right,level+1)
 }
