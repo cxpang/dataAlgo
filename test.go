@@ -16,7 +16,21 @@ func main() {
 		return a
 	})
 	fmt.Printf("%d %d %d\n", a, b, c)
+	NewUser("pangchenxu",23)
+
 }
 func SayHello(name string)  {
 	fmt.Println(name)
+}
+
+type User struct {
+	name string
+	age int
+}
+
+func NewUser(name string,age int)  {
+	var user = new(User)
+	user.name = name
+	user.age = age
+	fmt.Println(user)
 }
