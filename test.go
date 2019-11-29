@@ -16,7 +16,8 @@ func main() {
 		return a
 	})
 	fmt.Printf("%d %d %d\n", a, b, c)
-	NewUser("pangchenxu",23)
+	user:=NewUser("pangchenxu",23)
+	fmt.Println(user)
 
 }
 func SayHello(name string)  {
@@ -28,9 +29,9 @@ type User struct {
 	age int
 }
 
-func NewUser(name string,age int)  {
+func NewUser(name string,age int) *User {
 	var user = new(User)
 	user.name = name
 	user.age = age
-	fmt.Println(user)
+	return user
 }
