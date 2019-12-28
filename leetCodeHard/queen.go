@@ -16,9 +16,6 @@ func main() {
 var res [][]string
 
 func solveQueen(n int) [][]string  {
-
-
-
-
+    //TODO 设置撇捺 数组 保存数据  x+y = c
 	return res
 }
