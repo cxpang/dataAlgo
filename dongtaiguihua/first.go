@@ -39,5 +39,6 @@ func CountPath(a [][]int) int  {
 			}
 		}
 	}
+	fmt.Println(opt)
 	return opt[0][0]
 }
